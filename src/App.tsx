@@ -1,25 +1,19 @@
-import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import React from 'react';
+import logo from './logo.svg';
+import './App.css';
+import { alphabetArray } from './helpers/string.helper';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />ß
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer">
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const alphabetLowerCase = alphabetArray(false);
+    const alphabetUpperCase = alphabetArray(true);
+
+    console.log(alphabetLowerCase);
+    console.log(alphabetUpperCase);
+    return (
+        <div className="App">
+            <h1>Password Generator</h1>
+        </div>
+    );
 }
 
 export default App;
