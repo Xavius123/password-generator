@@ -11,3 +11,30 @@ export const alphabetArray = (isUpperCase: boolean): string[] => {
 
     return alpahabet;
 };
+
+export const numbersArray = (): string[] => {
+    let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+    const newStringArray = numbers.map((number) => number.toString());
+
+    return newStringArray;
+};
+
+export const symbolsArray = (): string[] => {
+    const symbols = [
+        '!',
+        '@',
+        '$',
+        '%',
+        '&',
+        '*',
+        '(',
+        ')',
+        '-',
+        '+',
+        '?',
+        '#',
+    ];
+
+    return symbols;
+};

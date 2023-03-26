@@ -1,14 +1,22 @@
 import React, { useState } from 'react';
 import './App.scss';
-import { alphabetArray } from './helpers/string.helper';
+import {
+    alphabetArray,
+    numbersArray,
+    symbolsArray,
+} from './helpers/string.helper';
 
 function App() {
     const [step, setStep] = useState(5);
     const alphabetLowerCase = alphabetArray(false);
     const alphabetUpperCase = alphabetArray(true);
+    const numbers = numbersArray();
+    const symblos = symbolsArray();
 
-    // console.log(alphabetLowerCase);
+    // console.log(alphabetLowerCase);∏
     // console.log(alphabetUpperCase);
+    // console.log(numbers);
+    // console.log(symblos);
 
     const onChange = (event: any) => {
         const currentStep = event.target.value;
