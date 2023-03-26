@@ -7,3 +7,9 @@ export const passwordRandomizer = (characters: string[]): string => {
 
     return password;
 };
+
+export const passwordGenerator = (): string => {
+    let password = '';
+
+    return password;
+};

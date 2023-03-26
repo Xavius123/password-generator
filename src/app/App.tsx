@@ -4,10 +4,11 @@ import {
     alphabetArray,
     numbersArray,
     symbolsArray,
-} from './helpers/string.helper';
+} from '../helpers/string.helper';
 
 function App() {
     const [step, setStep] = useState(5);
+    const [upperCase, setUpperCase] = useState(false);
     const alphabetLowerCase = alphabetArray(false);
     const alphabetUpperCase = alphabetArray(true);
     const numbers = numbersArray();
@@ -34,6 +35,17 @@ function App() {
                 max="100"
                 onChange={(e) => onChange(e)}
             />
+            <p>Include Uppercase</p>
+            <input type="checkbox" />
+            <p>Include Lowercase</p>
+            <input type="checkbox" />
+            <p>Include Numbers</p>
+            <input type="checkbox" />
+            <p>Include Symbols</p>
+            <input type="checkbox" />
+
+            <button type="button">Generate Password</button>
+            <p>Generated Password Text</p>
         </div>
     );
 }
