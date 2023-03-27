@@ -5,9 +5,11 @@ import {
     numbersArray,
     symbolsArray,
 } from '../helpers/string.helper';
+import Toggle from '../components/toggle/toggle';
+import Slider from '../components/slider/slider';
 
 function App() {
-    const [step, setStep] = useState(5);
+    const [generatedText, setGeneratedText] = useState(5);
     const [upperCase, setUpperCase] = useState(false);
     const alphabetLowerCase = alphabetArray(false);
     const alphabetUpperCase = alphabetArray(true);
@@ -18,34 +20,19 @@ function App() {
     // console.log(alphabetUpperCase);
     // console.log(numbers);
     // console.log(symblos);
-
-    const onChange = (event: any) => {
-        const currentStep = event.target.value;
-        setStep(currentStep);
-    };
-
     return (
         <div className="App">
-            <h1>Password Generator</h1>
-            <input
-                type="range"
-                className="slider"
-                value={step}
-                min="0"
-                max="100"
-                onChange={(e) => onChange(e)}
-            />
-            <p>Include Uppercase</p>
-            <input type="checkbox" />
-            <p>Include Lowercase</p>
-            <input type="checkbox" />
-            <p>Include Numbers</p>
-            <input type="checkbox" />
-            <p>Include Symbols</p>
-            <input type="checkbox" />
+            <div className="form">
+                <h1>Password Generator</h1>
+                <Slider />
+                <Toggle text="Include Uppercase" />
+                <Toggle text="Include Lowercase" />
+                <Toggle text="Include Numbers" />
+                <Toggle text="Include Symbols" />
 
-            <button type="button">Generate Password</button>
-            <p>Generated Password Text</p>
+                <button type="button">Generate Password</button>
+                <p>generatedText</p>
+            </div>
         </div>
     );
 }
