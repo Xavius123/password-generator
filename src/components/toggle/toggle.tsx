@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, useState } from 'react';
 import './toggle.scss';
 
 interface ToggleProps {
@@ -7,11 +7,22 @@ interface ToggleProps {
 
 const Toggle = (props: ToggleProps): ReactElement => {
     const { text } = props;
+    const [checkbox, setCheckbox] = useState(false);
+
+    const onChange = (event: any) => {
+        const isChecked = event.target.checked!;
+        setCheckbox(isChecked);
+    };
 
     return (
         <div className="toggle">
-            <p>{text}</p>
-            <input type="checkbox" />
+            <p className="toggle__text">{text}</p>
+            <input
+                className="toggle__input"
+                type="checkbox"
+                checked={checkbox}
+                onChange={(e) => onChange(e)}
+            />
         </div>
     );
 };
