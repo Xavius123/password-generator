@@ -21,20 +21,15 @@ export const numbersArray = (): string[] => {
 };
 
 export const symbolsArray = (): string[] => {
-    const symbols = [
-        '!',
-        '@',
-        '$',
-        '%',
-        '&',
-        '*',
-        '(',
-        ')',
-        '-',
-        '+',
-        '?',
-        '#',
-    ];
+    const symbols = [];
+
+    for (let i = 33; i <= 126; i++) {
+        const char = String.fromCharCode(i);
+        if (/[\w\s]/.test(char)) {
+            continue; // skip letters, digits, and whitespace
+        }
+        symbols.push(char);
+    }
 
     return symbols;
 };
