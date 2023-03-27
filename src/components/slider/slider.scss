@@ -1,4 +1,6 @@
+@use 'scss/colors' as *;
+
 .slider {
-    border: 1px solid red;
+    border: 1px solid $color-columbia-blue;
     display: flex;
 }

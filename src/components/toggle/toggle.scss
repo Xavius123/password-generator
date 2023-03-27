@@ -2,22 +2,23 @@
 
 .toggle {
     padding: 5px;
-    border: 1px solid $color-aquamarine;
+    border: 1px solid $color-columbia-blue;
     display: flex;
 
     // .toggle__text
     &__text {
-        color: grey;
+        color: $color-french-gray;
     }
 
     // .toggle__input
     &__input {
+        margin: auto;
         position: relative;
         width: 80px;
         height: 40px;
         -webkit-appearance: none;
         appearance: none;
-        background: red;
+        background: $color-crimson-red;
         outline: none;
         border-radius: 2rem;
         cursor: pointer;
@@ -41,7 +42,7 @@
         }
 
         &:checked {
-            background: #00ed64;
+            background: $color-aquamarine;
         }
     }
 }

@@ -1,6 +1,9 @@
+@use 'scss/colors' as *;
+
 .App {
     display: flex;
     justify-content: center;
+    background-color: $color-french-gray;
 }
 
 .form {
