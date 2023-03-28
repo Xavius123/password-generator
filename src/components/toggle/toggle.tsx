@@ -3,15 +3,16 @@ import './toggle.scss';
 
 interface ToggleProps {
     text: string;
+    onToggle: (isChecked: boolean) => void;
 }
 
 const Toggle = (props: ToggleProps): ReactElement => {
-    const { text } = props;
+    const { text, onToggle } = props;
     const [checkbox, setCheckbox] = useState(false);
 
-    const onChange = (event: any) => {
-        const isChecked = event.target.checked!;
+    const onChange = (isChecked: boolean) => {
         setCheckbox(isChecked);
+        onToggle(isChecked);
     };
 
     return (
@@ -21,7 +22,7 @@ const Toggle = (props: ToggleProps): ReactElement => {
                 className="toggle__input"
                 type="checkbox"
                 checked={checkbox}
-                onChange={(e) => onChange(e)}
+                onChange={(e) => onChange(e.target.checked)}
             />
         </div>
     );
