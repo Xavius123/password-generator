@@ -1,4 +1,5 @@
 This project is build with React and SCSS.
+
 You can toggle the 4 different types of password modifications and the length of the password.
 Once you have generated your decired password you can copy the password to your clipboard.
 
