@@ -43,7 +43,8 @@ const Form = (): ReactElement => {
                 Generate Password
             </button>
             <p>{sliderValue}</p>
-            <p>{generatedText}</p>
+            {/* <p>{generatedText}</p> */}
+            {/* <p>{generatedText.length}</p> */}
         </div>
     );
 };

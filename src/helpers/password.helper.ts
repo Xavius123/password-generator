@@ -1,15 +1,13 @@
 import { alphabetArray, numbersArray, symbolsArray } from './string.helper';
 
 export const passwordRandomizer = (
-    characters: string[],
+    chars: string[],
     sliderValue: number
 ): string => {
     let password = '';
-    characters.map((characters: any) => {
-        return (password +=
-            characters[Math.floor(Math.random() * characters.length)]);
-    });
-
+    for (let i = sliderValue; i > 0; i--) {
+        password += chars[Math.floor(Math.random() * chars.length)];
+    }
     return password;
 };
 
@@ -19,7 +17,7 @@ export const passwordGenerator = (
     useLowerCase: boolean,
     useNumbers: boolean,
     useSymbols: boolean
-): string => {
+): any => {
     let char: string[] = [];
     const alphabetLowerCase = alphabetArray(false);
     const alphabetUpperCase = alphabetArray(true);
@@ -44,5 +42,7 @@ export const passwordGenerator = (
 
     const password = passwordRandomizer(char, sliderValue);
     console.log(password);
-    return password;
+    // console.log(password);
+    // const password = passwordRandomizer(passwordArray);
+    // return password;
 };
