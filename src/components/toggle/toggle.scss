@@ -2,12 +2,12 @@
 
 .toggle {
     padding: 5px;
-    border: 1px solid $color-columbia-blue;
     display: flex;
 
     // .toggle__text
     &__text {
-        color: $color-french-gray;
+        font-size: 20px;
+        color: $color-black;
     }
 
     // .toggle__input

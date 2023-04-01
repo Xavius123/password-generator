@@ -13,16 +13,22 @@ const Slider = (props: SliderProps): ReactElement => {
         setSliderValue(currentStep);
         changeSlide(currentStep);
     };
+
     return (
-        <div className="slider">
-            <input
-                type="range"
-                className="slider"
-                value={sliderValue}
-                min="0"
-                max="100"
-                onChange={(e) => onChange(e)}
-            />
+        <div className="container">
+            <div className="slider">
+                <div className="range-slider_line">
+                    <div className="range-slider_line-fill"></div>
+                </div>
+                <input
+                    className="slider_input"
+                    type="range"
+                    value={sliderValue}
+                    min="0"
+                    max="100"
+                    onChange={(e) => onChange(e)}
+                />
+            </div>
         </div>
     );
 };

@@ -5,9 +5,11 @@ export const passwordRandomizer = (
     sliderValue: number
 ): string => {
     let password = '';
+
     for (let i = sliderValue; i > 0; i--) {
         password += chars[Math.floor(Math.random() * chars.length)];
     }
+
     return password;
 };
 
@@ -17,13 +19,14 @@ export const passwordGenerator = (
     useLowerCase: boolean,
     useNumbers: boolean,
     useSymbols: boolean
-): any => {
-    let char: string[] = [];
+): string => {
     const alphabetLowerCase = alphabetArray(false);
     const alphabetUpperCase = alphabetArray(true);
     const numbers = numbersArray();
     const symbols = symbolsArray();
 
+    let char: string[] = [];
+    let password = '';
     if (useUpperCase) {
         char = [...char, ...alphabetUpperCase];
     }
@@ -40,9 +43,11 @@ export const passwordGenerator = (
         char = [...char, ...symbols];
     }
 
-    const password = passwordRandomizer(char, sliderValue);
-    console.log(password);
-    // console.log(password);
-    // const password = passwordRandomizer(passwordArray);
-    // return password;
+    if (char.length === 0) {
+        return password;
+    }
+
+    password = passwordRandomizer(char, sliderValue);
+
+    return password;
 };

@@ -1,7 +1,8 @@
 @use 'scss/colors' as *;
 
 .app {
+    padding-top: 50px;
     display: flex;
     justify-content: center;
-    background-color: $color-french-gray;
+    background-color: $color-light-gray;
 }

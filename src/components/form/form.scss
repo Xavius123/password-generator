@@ -1,7 +1,18 @@
 @use 'scss/colors' as *;
-@use 'scss/colors' as *;
 
 .form {
-    border: 1px solid $color-columbia-blue;
+    background-color: $color-french-gray;
     width: 350px;
+
+    // .form__header
+    &__header {
+        display: flex;
+        justify-content: center;
+    }
+
+    // .form__btn
+    &__btn {
+        display: flex;
+        justify-content: center;
+    }
 }
