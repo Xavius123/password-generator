@@ -2,12 +2,16 @@ import React, { ReactElement, useState } from 'react';
 import './slider.scss';
 
 interface SliderProps {
+    min: number;
+    max: number;
+    step: number;
     changeSlide: (rangeValue: number) => void;
 }
 
 const Slider = (props: SliderProps): ReactElement => {
-    const { changeSlide } = props;
+    const { min, max, step, changeSlide } = props;
     const [sliderValue, setSliderValue] = useState(5);
+
     const onChange = (event: any) => {
         const currentStep = event.target.value;
         setSliderValue(currentStep);
@@ -17,17 +21,16 @@ const Slider = (props: SliderProps): ReactElement => {
     return (
         <div className="container">
             <div className="slider">
-                <div className="range-slider_line">
-                    <div className="range-slider_line-fill"></div>
-                </div>
                 <input
-                    className="slider_input"
+                    className="slider__input"
                     type="range"
                     value={sliderValue}
-                    min="0"
-                    max="100"
+                    min={min}
+                    max={max}
+                    step={step}
                     onChange={(e) => onChange(e)}
                 />
+                <div className="thumb">{sliderValue}</div>
             </div>
         </div>
     );

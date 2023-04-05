@@ -32,7 +32,12 @@ const Form = (): ReactElement => {
     return (
         <div className="form">
             <h1 className="form__header">Password Generator</h1>
-            <Slider changeSlide={(e) => setSliderValue(e)} />
+            <Slider
+                min={0}
+                max={100}
+                step={5}
+                changeSlide={(e) => setSliderValue(e)}
+            />
             <Toggle
                 text="Include Uppercase"
                 onToggle={(e) => setUpperCase(e)}
